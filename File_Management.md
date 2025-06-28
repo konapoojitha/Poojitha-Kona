@@ -1,5 +1,4 @@
-'''
-c
+```c
 //1.Write a C program to create a new text file and write "Hello, World!" to it?
 
 #include<stdio.h>
