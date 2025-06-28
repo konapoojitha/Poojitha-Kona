@@ -1,4 +1,4 @@
-'''
+'''c
 1.Write a C program to create a new text file and write "Hello, World!" to it?
 
 #include<stdio.h>
@@ -24,7 +24,7 @@ printf("failed to write\n");
 return;
 }
 close(fd);
-}
+}'''
 
 2.Develop a C program to open an existing text file and display its contents?
 
