@@ -1,5 +1,5 @@
+```c
 
-'''c
 1. What is memory management in system programming?
 
 	Memory management is the process by which an operating system handles allocation, tracking, and deallocation of memory space to processes, ensuring efficient and safe use of RAM.
