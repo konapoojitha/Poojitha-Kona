@@ -1,6 +1,6 @@
 
-### What is kernel?
-
+**What is kernel?**
+```
 	The kernel is the core part of an operating system that manages hardware and allows software (like apps or services) to interact with the hardware.
 	Acts as a bridge between user applications and hardware
 	Manages:    CPU scheduling
@@ -9,19 +9,24 @@
 				I/O devices (like USB, sensors, etc.)
 				File systems
 				Inter-process communication (IPC)
+```
 
- ### Types of Kernels
-				**Monolithic Kernel:** Everything (drivers, filesystem, etc.) runs in kernel space
-				                       → Example: Linux kernel
+**Types of Kernels**
+```
+**Monolithic Kernel:** Everything (drivers, filesystem, etc.) runs in kernel space
+		       → Example: Linux kernel
 				
-				**Microkernel:** Minimal core, with many services running in user space
-				                 → Example: QNX, MINIX
+**Microkernel:** Minimal core, with many services running in user space
+		       → Example: QNX, MINIX
 				
-				**Hybrid Kernel:** Combines both approaches
-				                   → Example: Windows NT, XNU (used in macOS)
+**Hybrid Kernel:** Combines both approaches
+		 → Example: Windows NT, XNU (used in macOS)
 
-### Roles of Kernel
+```
 
+**Roles of Kernel**
+
+```
  **Process Management**               Manages running programs (processes),handles creation, scheduling, and termination.Ensures fair CPU sharing and multitasking.
  
  **Memory Management**                Allocates and protects RAM between processes, handles virtual memory and paging.                                               
@@ -30,10 +35,12 @@
  **File System Management**           Manages how data is stored and retrieved on storage devices (e.g., ext4, FAT32).                                                
  **System Call Interface**            Provides APIs so user-space applications can request services (like open files, create processes, etc.).                       
  **Security and Access Control**      Controls which process/user can access what; enforces permissions and isolation.                                               
- **Interrupt and Exception Handling** Responds to hardware interrupts and software exceptions in real time.   
+ **Interrupt and Exception Handling** Responds to hardware interrupts and software exceptions in real time.
+``` 
 
- ### What is the Booting Process?
+ **What is the Booting Process?**
 
+```
 	 The booting process is the sequence of steps that occur when a system is powered on, leading up to the loading of the operating system kernel and user applications.
 
   **Step 1**: BIOS/UEFI 
@@ -65,6 +72,6 @@
 System is Ready to Use
 You see a login prompt or desktop GUI.
 System is fully booted and ready.
-
+```
 
 
