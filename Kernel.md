@@ -4,11 +4,11 @@
 	The kernel is the core part of an operating system that manages hardware and allows software (like apps or services) to interact with the hardware.
 	Acts as a bridge between user applications and hardware
 	Manages:    CPU scheduling
-				Memory
-				Processes
-				I/O devices (like USB, sensors, etc.)
-				File systems
-				Inter-process communication (IPC)
+                    Memory
+                    Processes
+                    I/O devices (like USB, sensors, etc.)
+                    File systems
+                    Inter-process communication (IPC)
 ```
 
 **Types of Kernels**
@@ -66,7 +66,7 @@
 
 **Step 5**: The init system:
             Starts background services (network, Bluetooth, display).
-			Mounts filesystems.
+            Mounts filesystems.
             Brings the system to the default runlevel or target (multi-user or GUI).
 
 System is Ready to Use
