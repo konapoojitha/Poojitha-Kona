@@ -9,7 +9,56 @@
 7.OUTCOME
 ```
 
-### DOWNLOAD AND INSTALLING NEW KERNEL
+### 1.OBJECTIVE
+```c
+To develop a UART (Universal Asynchronous Receiver/Transmitter) Linux device driver that allows serial communication between the host and a peripheral device. This involves:
+            - Understanding the UART hardware.
+            - Writing a Linux character device driver.
+            - Transmitting and receiving data using UART.
+            - Integrating and testing the driver in a Linux kernel environment.
+
+```
+
+### 2.UART INTRODUCTION
+```c
+            UART is a hardware communication protocol that uses two lines:
+            
+                        TX (Transmit)
+                        RX (Receive)
+                        Key Features: Asynchronous (no clock signal shared).
+                                      Common in serial ports (RS-232, RS-485, TTL).
+                                      Widely used in embedded systems, serial consoles, GPS, Bluetooth modules, etc.
+                        UART Communication Parameters:Baud Rate (e.g., 9600, 115200)
+                                                      Data bits (5–8)
+                                                      Stop bits (1 or 2)
+                                                      Parity (None, Even, Odd)
+```
+
+### 3.HARDWARE REQUIREMENTS
+```c
+            Two PCs with Serial (DB9) Ports
+            Null Modem Serial Cable (DB9-to-DB9, Crossed)
+            Linux Host System (on both PCs)
+```
+
+### 4.SOFTWARE REQUIREMENTS
+```c
+            Linux OS with development tools (Ubuntu or any distro).
+            
+            Kernel source or headers for the target system.
+            
+            Cross-compiler for embedded target (e.g., arm-none-eabi-gcc).
+            
+            Minicom/PuTTY for UART communication testing.
+            
+            Device tree source (DTS) files (if working with embedded platforms).
+            
+            insmod, rmmod, dmesg, mknod utilities for kernel module testing
+```
+                        
+
+
+### 5. DOWNLOAD AND INSTALLING NEW KERNEL
 
 ```c
 comments that are mentioned in '' are linux commands
@@ -78,4 +127,58 @@ comments that are mentioned in '' are linux commands
              check boot sequence is enabled or not,if it is enabled--disable it and enter into new kernel.
              If the new kernel is opened then check version with 'uname -r'
 ```
+
+### 6.UART MODULE DEVELOPMENT
+```c
+Step 1: Create UART Character Driver Skeleton
+        static int __init uart_init(void)
+        {
+                printk(KERN_INFO "UART Driver Loaded\n");
+                return 0;
+        }
+            
+        static void __exit uart_exit(void)
+        {
+                printk(KERN_INFO "UART Driver Unloaded\n");
+        }
+            
+        module_init(uart_init);
+        module_exit(uart_exit);
+        MODULE_LICENSE("GPL");
+```
+
+```c
+Step 2: Register Character Device
+        Use register_chrdev() or cdev_add() to register device.
+        Implement file operations: open(), read(), write(), close()
+```
+```c
+Step 3: Access UART Hardware
+        Use ioremap() to map UART base address.
+        Control UART via memory-mapped registers (e.g., LSR, THR, RBR).
+        Configure baud rate, parity, stop bits, etc.
+```
+```c
+Step 4: Testing
+        Load module: sudo insmod uart_driver.ko
+        Use dmesg to verify: dmesg | tail
+        Create device node: sudo mknod /dev/uart0 c <major> 0
+        Read/Write to UART: echo "Hello UART" > /dev/uart0
+                            cat /dev/uart0
+```
+
+### 7.OUTCOME
+```c
+            Successfully developed a UART character driver.
+            
+            Achieved serial communication via /dev/uart0.
+            
+            Demonstrated reading/writing from UART using user-space apps.
+            
+            Understood kernel module programming and UART register handling.
+            
+            Created reusable UART module for embedded systems.
+```
+
+
               
