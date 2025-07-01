@@ -31,6 +31,7 @@ comments that are mentioned in '' are linux commands
 **step5 :** Install some presequites
             'sudo apt-get install libncurses5-dev libncurses5-dev'
             'sudo apt-get install build-essential'
+            'sudo apt-get install flex'
             'sudo apt-get install bison'
 ```
 ```c
