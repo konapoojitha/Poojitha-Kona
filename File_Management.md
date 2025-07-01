@@ -26,8 +26,8 @@ return;
 close(fd);
 }
 ```
-2.Develop a C program to open an existing text file and display its contents?
-
+### Develop a C program to open an existing text file and display its contents?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -55,9 +55,11 @@ buf[ret]='\0';
 printf("%s\n",buf);
 close(fd);
 }
+```
 
-3.Implement a C program to create a new directory named "Test" in the current directory?
+### Implement a C program to create a new directory named "Test" in the current directory?
 
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -73,9 +75,10 @@ printf("successfully created\n");
 else
 printf("not created\n");
 }
+```
 
-4.Write a C program to check if a file named "sample.txt" exists in the current directory?
-
+### Write a C program to check if a file named "sample.txt" exists in the current directory?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -94,9 +97,10 @@ return;
 printf("file already exists\n");
 close(fd);
 }
+```
 
-5.Develop a C program to rename a file from "oldname.txt" to "newname.txt"?
-
+### Develop a C program to rename a file from "oldname.txt" to "newname.txt"?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -114,9 +118,10 @@ return;
 }
 printf("failed\n");
 }
+```
 
-6.Implement a C program to delete a file named "delete_me.txt"?
-
+### Implement a C program to delete a file named "delete_me.txt"?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -134,9 +139,10 @@ return;
 }
 printf("failed\n");
 }
+```
 
-7.Write a C program to copy the contents of one file to another?
-
+### Write a C program to copy the contents of one file to another?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -177,9 +183,10 @@ printf("sucessfully copied\n");
 close(file1);
 close(file2);
 }
+```
 
-8. Develop a C program to move a file from one directory to another?
-
+### Develop a C program to move a file from one directory to another?
+```
 #include<stdio.h>
 #include<unistd.h>
 #include<sys/types.h>
@@ -194,9 +201,9 @@ return;
 }
 printf("failed\n");
 }
-
-9. Implement a C program to list all files in the current directory?
-
+```
+### Implement a C program to list all files in the current directory?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<dirent.h>
@@ -214,9 +221,9 @@ printf("files in the current directory\n");
 while(name=readdir(dir))
  printf("%s\n",name->d_name);
 }
-
-10. Write a C program to get the size of a file named "file.txt"?
-
+```
+### Write a C program to get the size of a file named "file.txt"?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<sys/stat.h>
@@ -233,9 +240,10 @@ return;
 }
 printf("size of the file: %ld\n",file.st_size);
 }
+```
 
-11.Develop a C program to check if a directory named "Test" exists in the current directory?
-
+### Develop a C program to check if a directory named "Test" exists in the current directory?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -251,9 +259,9 @@ printf("not exists\n");
 else
 printf("already exists\n");
 }
-
-12.Implement a C program to create a new directory named "Backup" in the parent directory?
-
+```
+### Implement a C program to create a new directory named "Backup" in the parent directory?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -269,9 +277,9 @@ printf("successfully created\n");
 else
 printf("not created\n");
 }
-
-13. Write a C program to recursively list all files and directories in a given directory?
-
+```
+### Write a C program to recursively list all files and directories in a given directory?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<dirent.h>
@@ -299,12 +307,10 @@ void main()
 printf("files in current directory:\n");
 list_files(".");
 }
-
-14. Develop a C program to delete all files in a directory named "Temp"?
-
-
-15. Implement a C program to count the number of lines in a file named "data.txt"?
-
+```
+### Develop a C program to delete all files in a directory named "Temp"?
+### Implement a C program to count the number of lines in a file named "data.txt"?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -333,9 +339,9 @@ return;
 printf("no of lines :%d\n",count);
 close(fd);
 }
-
-16. Write a C program to append "Goodbye!" to the end of an existing file named "message.txt"?
-
+```
+#### Write a C program to append "Goodbye!" to the end of an existing file named "message.txt"?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -359,9 +365,9 @@ return;
 }
 close(fd);
 }
-
-17.Implement a C program to change the permissions of a file named "file.txt" to read-only?
-
+```
+### Implement a C program to change the permissions of a file named "file.txt" to read-only?
+```
 #include<stdio.h>
 #include<sys/stat.h>
 void main()
@@ -373,9 +379,9 @@ if(fd==0)
 else
   printf("failed to change");
 }
-
-18.Write a C program to change the ownership of a file named "file.txt" to the user "user1"?
-
+```
+### Write a C program to change the ownership of a file named "file.txt" to the user "user1"?
+```
 #include<stdio.h>
 #include<pwd.h>
 #include<sys/types.h>
@@ -395,9 +401,9 @@ if(chown(filename,pw->pw_uid,-1)==0)
 else
         printf("failed to change");
 }
-
-19. Develop a C program to get the last modified timestamp of a file named "file.txt"?
-
+```
+### Develop a C program to get the last modified timestamp of a file named "file.txt"?
+```
 #include<stdio.h>
 #include<sys/stat.h>
 #include<stdlib.h>
@@ -421,9 +427,9 @@ return;
 }
 printf("last modified time of %s:%s","file.txt",asctime(modtime));
 }
-
-20. Implement a C program to create a temporary file and write some data to it?
-
+```
+### Implement a C program to create a temporary file and write some data to it?
+```
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -448,9 +454,9 @@ return;
 }
 close(fd);
 }
-
-21. Write a C program to check if a given path refers to a file or a directory?
-
+```
+### Write a C program to check if a given path refers to a file or a directory?
+```
 #include <stdio.h>
 #include <sys/stat.h>
 
@@ -475,7 +481,7 @@ int main() {
 
     return 0;
 }
-
+```
 22. Develop a C program to create a hard link named "hardlink.txt" to a file named "source.txt"?
 
 #include <stdio.h>
