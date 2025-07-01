@@ -1,6 +1,6 @@
 c
 ### 1.Write a C program to create a new text file and write "Hello, World!" to it?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -27,7 +27,7 @@ close(fd);
 }
 ```
 ### Develop a C program to open an existing text file and display its contents?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -59,7 +59,7 @@ close(fd);
 
 ### Implement a C program to create a new directory named "Test" in the current directory?
 
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -78,7 +78,7 @@ printf("not created\n");
 ```
 
 ### Write a C program to check if a file named "sample.txt" exists in the current directory?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -100,7 +100,7 @@ close(fd);
 ```
 
 ### Develop a C program to rename a file from "oldname.txt" to "newname.txt"?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -121,7 +121,7 @@ printf("failed\n");
 ```
 
 ### Implement a C program to delete a file named "delete_me.txt"?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -142,7 +142,7 @@ printf("failed\n");
 ```
 
 ### Write a C program to copy the contents of one file to another?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -186,7 +186,7 @@ close(file2);
 ```
 
 ### Develop a C program to move a file from one directory to another?
-```
+```c
 #include<stdio.h>
 #include<unistd.h>
 #include<sys/types.h>
@@ -203,7 +203,7 @@ printf("failed\n");
 }
 ```
 ### Implement a C program to list all files in the current directory?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<dirent.h>
@@ -223,7 +223,7 @@ while(name=readdir(dir))
 }
 ```
 ### Write a C program to get the size of a file named "file.txt"?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<sys/stat.h>
@@ -243,7 +243,7 @@ printf("size of the file: %ld\n",file.st_size);
 ```
 
 ### Develop a C program to check if a directory named "Test" exists in the current directory?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -261,7 +261,7 @@ printf("already exists\n");
 }
 ```
 ### Implement a C program to create a new directory named "Backup" in the parent directory?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -279,7 +279,7 @@ printf("not created\n");
 }
 ```
 ### Write a C program to recursively list all files and directories in a given directory?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<dirent.h>
@@ -310,7 +310,7 @@ list_files(".");
 ```
 ### Develop a C program to delete all files in a directory named "Temp"?
 ### Implement a C program to count the number of lines in a file named "data.txt"?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -341,7 +341,7 @@ close(fd);
 }
 ```
 #### Write a C program to append "Goodbye!" to the end of an existing file named "message.txt"?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -367,7 +367,7 @@ close(fd);
 }
 ```
 ### Implement a C program to change the permissions of a file named "file.txt" to read-only?
-```
+```c
 #include<stdio.h>
 #include<sys/stat.h>
 void main()
@@ -381,7 +381,7 @@ else
 }
 ```
 ### Write a C program to change the ownership of a file named "file.txt" to the user "user1"?
-```
+```c
 #include<stdio.h>
 #include<pwd.h>
 #include<sys/types.h>
@@ -403,7 +403,7 @@ else
 }
 ```
 ### Develop a C program to get the last modified timestamp of a file named "file.txt"?
-```
+```c
 #include<stdio.h>
 #include<sys/stat.h>
 #include<stdlib.h>
@@ -429,7 +429,7 @@ printf("last modified time of %s:%s","file.txt",asctime(modtime));
 }
 ```
 ### Implement a C program to create a temporary file and write some data to it?
-```
+```c
 #include<stdio.h>
 #include<sys/types.h>
 #include<unistd.h>
@@ -456,7 +456,7 @@ close(fd);
 }
 ```
 ### Write a C program to check if a given path refers to a file or a directory?
-```
+```c
 #include <stdio.h>
 #include <sys/stat.h>
 
