@@ -181,7 +181,7 @@ Step 4: Testing
             Created reusable UART module for embedded systems.
 ```
 ### 8.CHALLENGES
-```c
+
             - Successfully compiled and installed a custom UART driver module into the Linux kernel.
             
             - Unable to transmit/receive data after driver installation — the UART interface was not functioning as expected.
@@ -208,31 +208,32 @@ Step 4: Testing
 
             - Specifically **enabled** the following option:
 
-              - `CONFIG_EFI_MOKVAR=y` — to allow access to MOK (Machine Owner Key) variables from the kernel.
+                          - `CONFIG_EFI_MOKVAR=y` — to allow access to MOK (Machine Owner Key) variables from the kernel.
+            
             - Recompiled the kernel using the following steps:
 
-              - `make`
-
-              - `make modules_install`
-
-              - `make install`
+                          - `make`
+            
+                          - `make modules_install`
+            
+                          - `make install`
 
             - After installing the new kernel, wrote a **simple character device module** to test Secure Boot compatibility.
 
             - Generated **MOK (Machine Owner Key) pairs** using `openssl`:
 
-              - Used the key to sign both the **downloaded kernel** and the **character module**.
+                          - Used the key to sign both the **downloaded kernel** and the **character module**.
 
             - Attempted to install the `.ko` module using `insmod`.
 
             - The module **loaded successfully**, indicating that:
 
-              - The Secure Boot trust chain was now properly set up.
+                          - The Secure Boot trust chain was now properly set up.
+            
+                          - The MOK keys were correctly enrolled and accepted by the system.
 
-              - The MOK keys were correctly enrolled and accepted by the system.
 
-
-```
+---
 
 
 
