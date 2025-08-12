@@ -135,3 +135,64 @@ UART stands for Universal Asynchronous Receiver/Transmitter. It's a hardware com
 
 
 
+```c
+
+#include<stdio.h>
+#include<unistd.h>
+#include<stdlib.h>
+#include<fcntl.h>
+#include<string.h>
+
+void main()
+{
+ int fd1,fd2,fd3,count=0;
+ int ret1,ret2;
+ char buff,buff1;
+ fd1=open("file1.txt",O_CREAT|O_APPEND|O_RDONLY,0666);
+ if(fd1<0)
+ {
+  printf("Couldn't open the file\n");
+  return;
+ }
+
+ fd2=open("file2.txt",O_CREAT|O_APPEND|O_RDONLY,0666);
+ if(fd2<0)
+ {
+  printf("Couldn't open the file\n");
+  return;
+ }
+
+ fd3=open("file3.txt",O_TRUNC|O_CREAT|O_RDWR,0666);
+ if(fd3<0)
+ {
+  printf("Couldn't open the file\n");
+  return;
+ }
+
+ while(ret1=(read(fd1,&buff,1)) && buff!='\n')
+ {
+   write(fd3,&buff,ret1);
+   printf("%c",buff);
+   if(buff==' ' || buff=='\n')
+   {
+     while(ret2=(read(fd2,&buff1,1)))
+     {
+      write(fd3,&buff1,ret2);
+      printf("%c",buff1);
+       if(buff1==' ')
+       {
+         break;
+       }
+
+     }
+   }
+ }
+close(fd1);
+close(fd2);
+close(fd3);
+}
+```
+
+
+
+
